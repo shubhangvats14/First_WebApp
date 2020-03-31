@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+<h1>This passage has {{ word_count }} words</h1>
+<!--
+<a href="">Click here for Home page</a> #if we use this way then it will not work as it will be unable to find the url
+location, so for that we dafine name in the url so that it can be easily identified
+
+<a href="home">Click here for Home page</a> #although we have defined name in url file but now another error occurs that django
+move page by page ,so it is unable to find the url .../result/home/, therefore we use %  % to define that jump to the url by
+ignorint in between that is in place of .../result/home/ it will move to ...home/
+-->
+<a href="{% url 'home' %}">Click here for Home page</a></p>
+<br></br>
+
+
+{{article}}
+<br>
+<br>
+{% for word, num in dict_words.items %}
+{{word}}::{{num}}
+<br>
+
+{% endfor %}
+</body>
+</html>

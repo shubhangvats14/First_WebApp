@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Views App</title>
+</head>
+<br>
+<h1>This came from our html file</h1>
+<br>
+{{ key1 }} <!-- we use double { when we want to insert python code as we did here -->
+<br>
+<!-- <a href="result">Click here for result</a> -->
+<a href="{% url 'result' %}">Click here for result page</a>
+<br></br>
+
+
+
+<!-- Taking input from user, using form -->
+<form action="{% url 'result' %}">
+    {% csrf_token %} <!-- used to safe guard the website as hackers hack using this form only, so this csrf is a security key that checks the data entered -->
+    <!--
+    <input type="text" name="user_age"> # name is the variable that stores the user input
+    <br></br>
+    <h5>Enter your name</h5>
+    <input type="text" name="user_name"> # name is the variable that stores the user input
+    <input type="submit" name="Submit">
+    <br></br>
+    -->
+
+    <!-- Django Article Analyser -->
+    <textarea cols="60" rows="10" name="article"></textarea>
+    <input type="submit" name="Submit">
+
+
+
+
+</form>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+<!-- we use templates folder to separate out html code and also used for reusable code like we din for the python code(key1) -->
